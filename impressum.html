@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechtliche Informationen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #f5f5f7;
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 22px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #06c, #0dcaf0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-link {
+            margin-left: 28px;
+            font-size: 14px;
+            color: #f5f5f7;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.3s;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 14px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #86868b;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f5f5f7;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .content-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #06c, #0dcaf0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            color: #f5f5f7;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #06c, #0dcaf0);
+            border-radius: 3px;
+        }
+
+        p,
+        address {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #f5f5f7;
+            opacity: 0.8;
+            font-style: normal;
+        }
+
+        a {
+            color: #0dcaf0;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #06c;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            color: #f5f5f7;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 12px 24px;
+            text-decoration: none;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #f5f5f7;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            color: #86868b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.5s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Floating Elements Effect */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(90deg, rgba(6, 204, 255, 0.05), rgba(13, 202, 240, 0.02));
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        #float1 {
+            width: 500px;
+            height: 500px;
+            top: 10%;
+            left: -10%;
+            animation: float 30s infinite alternate ease-in-out;
+        }
+
+        #float2 {
+            width: 600px;
+            height: 600px;
+            top: 50%;
+            right: -20%;
+            animation: float 35s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(80px, 40px);
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 80px 24px 40px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .floating-element {
+                opacity: 0.3;
+            }
+
+            .tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .tab {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-element" id="float1"></div>
+    <div class="floating-element" id="float2"></div>
+
+    <nav>
+        <div class="nav-logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="https://gunasiri.de" class="nav-link">Startseite</a>
+            <a href="about" class="nav-link">Über mich</a>
+            <a href="#" class="nav-link">Projekte</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('impressum')">Impressum</button>
+            <button class="tab" onclick="switchTab('datenschutz')">Datenschutzerklärung</button>
+        </div>
+
+        <div id="impressum" class="content-section active">
+            <h1>Impressum</h1>
+
+            <div class="card">
+                <h3>Angaben gemäß § 5 TMG</h3>
+                <address>
+                    Inthusan Gunasiri<br>
+                    Ettishofer Straße 7<br>
+                    88250 Weingarten<br>
+                    Deutschland
+                </address>
+            </div>
+
+            <h2>Kontakt</h2>
+            <p>E-Mail: <a href="mailto:inthusan@gunasiri.de">inthusan@gunasiri.de</a></p>
+
+            <h2>Hinweis</h2>
+            <p>Dies ist eine private Website zur Präsentation persönlicher Projekte. Sie verfolgt keinen kommerziellen
+                Zweck.</p>
+
+            <a href="https://gunasiri.de" class="back-btn">Zurück zur Startseite</a>
+        </div>
+
+        <div id="datenschutz" class="content-section">
+            <h1>Datenschutzerklärung</h1>
+
+            <p>Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Diese Website verarbeitet keine
+                personenbezogenen Daten automatisch und verwendet keine Tracking-Tools.</p>
+
+            <div class="card">
+                <h3>Kontaktformular</h3>
+                <p>Wenn Sie über das bereitgestellte Kontaktformular mit mir in Kontakt treten, werden Ihre Angaben (z.
+                    B. Name,
+                    E-Mail-Adresse, Nachricht) an den externen Dienst <a href="https://formsubmit.co"
+                        target="_blank">formsubmit.co</a>
+                    übermittelt, um die Nachricht per E-Mail weiterzuleiten.</p>
+                <p>Bitte beachten Sie, dass <strong>formsubmit.co</strong> ein Drittanbieter mit Sitz außerhalb der EU
+                    ist. Mit der
+                    Nutzung des Formulars willigen Sie in die Verarbeitung Ihrer Daten gemäß den <a
+                        href="https://formsubmit.co/privacy.pdf" target="_blank">Datenschutzrichtlinien von
+                        formsubmit.co</a> ein.</p>
+            </div>
+
+            <h2>Cookies</h2>
+            <p>Diese Website verwendet keine Cookies.</p>
+
+            <h2>Ihre Rechte</h2>
+            <p>Sie haben jederzeit das Recht auf Auskunft über die bei mir gespeicherten personenbezogenen Daten, deren
+                Herkunft
+                und Empfänger sowie den Zweck der Datenverarbeitung. Außerdem haben Sie ein Recht auf Berichtigung,
+                Sperrung oder Löschung dieser Daten.</p>
+            <p>Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich
+                bei der
+                zuständigen Aufsichtsbehörde beschweren.</p>
+
+            <div class="card">
+                <h3>Kontakt</h3>
+                <p>Verantwortlich für die Datenverarbeitung:</p>
+                <address>
+                    Inthusan Gunasiri<br>
+                    Ettishofer Straße 7<br>
+                    88250 Weingarten<br>
+                    E-Mail: <a href="mailto:inthusan@gunasiri.de">inthusan@gunasiri.de</a>
+                </address>
+            </div>
+
+            <a href="https://gunasiri.de" class="back-btn">Zurück zur Startseite</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Inthusan Gunasiri. Alle Rechte vorbehalten.
+    </footer>
+
+    <script>
+        // Parallax Effekt für die schwebenden Elemente
+        document.addEventListener('mousemove', function (e) {
+            const moveX = (e.clientX - window.innerWidth / 2) / 100;
+            const moveY = (e.clientY - window.innerHeight / 2) / 100;
+
+            document.querySelectorAll('.floating-element').forEach(function (element) {
+                const speedX = element.offsetWidth / 200;
+                const speedY = element.offsetHeight / 200;
+
+                element.style.transform = `translate(${moveX * speedX}px, ${moveY * speedY}px)`;
+            });
+        });
+
+        // Tab Switching Functionality
+        function switchTab(tabId) {
+            // Deaktiviere alle Tabs und Inhalte
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Aktiviere den ausgewählten Tab und Inhalt
+            document.getElementById(tabId).classList.add('active');
+
+            // Finde den Tab-Button, der zu diesem Inhalt gehört
+            const tabs = document.querySelectorAll('.tab');
+            if (tabId === 'impressum') {
+                tabs[0].classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+            }
+
+            // Animation für den neuen Inhalt
+            document.getElementById(tabId).style.animation = 'none';
+            setTimeout(() => {
+                document.getElementById(tabId).style.animation = 'fadeInUp 0.8s forwards';
+            }, 10);
+        }
+
+        // Navigation Transparenz-Effekt beim Scrollen
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    </script>
+</body>
+
+</html>
