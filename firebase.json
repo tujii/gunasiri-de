@@ -1,11 +1,15 @@
 {
   "hosting": {
+    "404": "404.html",
     "public": ".",
     "ignore": [
       "firebase.json",
       ".firebaserc",
       ".gitignore",
-      ".git"
-    ]
+      ".git",
+      "README.md"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }
