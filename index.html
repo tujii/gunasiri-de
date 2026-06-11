@@ -560,7 +560,7 @@
             <p class="hero-subtitle">Entwickler, Kreativer, Unternehmer.</p>
             <a href="#about" class="hero-button">Mehr erfahren</a>
         </div>
-        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+        <div class="scroll-indicator" onclick="window.scrollTo({top: document.getElementById('about').offsetTop, behavior: 'smooth'})" style="cursor:pointer;">
             <svg width="30" height="50" viewBox="0 0 30 50">
                 <rect x="13" y="10" width="4" height="12" rx="2" fill="#fff" />
                 <path d="M15 32L7 24H23L15 32Z" fill="#fff" />
