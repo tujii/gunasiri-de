@@ -5,21 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Innovative Projekte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset und Basis-Styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-        }
-
-        @font-face {
-            font-family: 'SF Pro Display';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         }
 
         :root {
@@ -807,10 +802,30 @@
                 align-items: center;
                 padding: 0 20px;
                 margin-top: 12px;
-                color: rgba(255,255,255,0.25);
-                font-size: 12px;
-                letter-spacing: 0.05em;
-                user-select: none;
+            }
+
+            .swipe-btn {
+                background: rgba(255,255,255,0.08);
+                border: 1px solid rgba(255,255,255,0.12);
+                color: rgba(255,255,255,0.6);
+                font-family: inherit;
+                font-size: 13px;
+                letter-spacing: 0.03em;
+                padding: 8px 18px;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: background 0.2s ease, color 0.2s ease;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .swipe-btn:active {
+                background: rgba(255,255,255,0.18);
+                color: #fff;
+            }
+
+            .swipe-btn:disabled {
+                opacity: 0.2;
+                cursor: default;
             }
 
             /* Card dots */
@@ -1081,8 +1096,8 @@
         </div>
 
         <div class="swipe-hint">
-            <span>← zurück</span>
-            <span>weiter →</span>
+            <button class="swipe-btn" id="btnPrev">← zurück</button>
+            <button class="swipe-btn" id="btnNext">weiter →</button>
         </div>
         <div class="card-dots" id="cardDots"></div>
     </section>
@@ -1318,6 +1333,23 @@
                     onSwipeEnd(e.clientX - startX);
                 });
 
+                // Prev/Next buttons
+                const btnPrev = document.getElementById('btnPrev');
+                const btnNext = document.getElementById('btnNext');
+
+                function updateButtons() {
+                    if (btnPrev) btnPrev.disabled = currentIndex === 0;
+                    if (btnNext) btnNext.disabled = currentIndex === projects.length - 1;
+                }
+
+                if (btnPrev) btnPrev.addEventListener('click', () => {
+                    if (currentIndex > 0) { currentIndex--; updateCards(); updateButtons(); }
+                });
+
+                if (btnNext) btnNext.addEventListener('click', () => {
+                    if (currentIndex < projects.length - 1) { currentIndex++; updateCards(); updateButtons(); }
+                });
+
                 // Disable modal on card-visual (use Entdecken button instead)
                 document.querySelectorAll('.project-visual').forEach(v => {
                     v.setAttribute('onclick', '');
@@ -1325,6 +1357,7 @@
                 });
 
                 updateCards();
+                updateButtons();
             }
 
             initCardStack();
