@@ -775,14 +775,14 @@
                     <h3 class="project-title">Blacklodge</h3>
                     <p class="project-description">Mobile Cocktailbar für Events – stilvoll, hochwertig, unvergesslich.
                         Wir bringen exklusive Cocktailerlebnisse zu jedem Anlass.</p>
-                    <a href="https://www.instagram.com/_the.black.lodge_/" class="project-button" target="_blank"
+                    <a href="https://blacklodge.web.app" class="project-button" target="_blank"
                         rel="noopener noreferrer">Entdecken</a>
                 </div>
                 <div class="project-visual" onclick="openModal('blacklodge-modal')">
                     <div class="project-gradient"></div>
-                    <iframe src="https://www.instagram.com/_the.black.lodge_/embed" width="100%" height="100%"
-                        title="Blacklodge Instagram">
-                    </iframe>
+                    <div class="parallax-wrapper">
+                        <div class="parallax-bg" style="background-image: url('images/blacklodge.jpg'); background-size: cover; background-position: center;"></div>
+                    </div>
                     <div class="project-overlay">
                         <div class="zoom-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -808,7 +808,7 @@
                 <div class="project-visual" onclick="openModal('tujii-modal')">
                     <div class="project-gradient"></div>
                     <div class="parallax-wrapper">
-                        <div class="parallax-bg" style="background-image: url('/api/placeholder/800/600')"></div>
+                        <div class="parallax-bg" style="background-image: url('images/tujii-prince.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #111;"></div>
                     </div>
                     <div class="project-overlay">
                         <div class="zoom-icon">
@@ -834,9 +834,9 @@
                 </div>
                 <div class="project-visual" onclick="openModal('kolam-modal')">
                     <div class="project-gradient"></div>
-                    <iframe src="https://www.instagram.com/kolam.culture/embed" width="100%" height="100%"
-                        title="Kolam Culture Instagram">
-                    </iframe>
+                    <div class="parallax-wrapper">
+                        <div class="parallax-bg" style="background-image: url('images/kolam-culture.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #7a1010;"></div>
+                    </div>
                     <div class="project-overlay">
                         <div class="zoom-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -862,7 +862,7 @@
                 <div class="project-visual" onclick="openModal('ovp-modal')">
                     <div class="project-gradient"></div>
                     <div class="parallax-wrapper">
-                        <div class="parallax-bg" style="background-image: url('/api/placeholder/800/600')"></div>
+                        <div class="parallax-bg" style="background-image: url('images/ovp.png'); background-size: cover; background-position: center;"></div>
                     </div>
                     <div class="project-overlay">
                         <div class="zoom-icon">
@@ -889,7 +889,7 @@
                 <div class="project-visual" onclick="openModal('chronize-modal')">
                     <div class="project-gradient"></div>
                     <div class="parallax-wrapper">
-                        <div class="parallax-bg" style="background-image: url('/api/placeholder/800/600')"></div>
+                        <div class="parallax-bg" style="background-image: url('images/chronize.svg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #0a1a1a;"></div>
                     </div>
                     <div class="project-overlay">
                         <div class="zoom-icon">
@@ -916,7 +916,7 @@
                 <div class="project-visual" onclick="openModal('i2bit-modal')">
                     <div class="project-gradient"></div>
                     <div class="parallax-wrapper">
-                        <div class="parallax-bg" style="background-image: url('/api/placeholder/800/600')"></div>
+                        <div class="parallax-bg" style="background-image: url('images/i2bit.jpg'); background-size: cover; background-position: center;"></div>
                     </div>
                     <div class="project-overlay">
                         <div class="zoom-icon">
@@ -937,18 +937,18 @@
     <!-- Modal Windows for Projects -->
     <div class="modal" id="blacklodge-modal">
         <div class="modal-content">
-            <iframe src="https://www.instagram.com/_the.black.lodge_/embed" width="100%" height="100%"
-                title="Blacklodge Instagram Full View">
-            </iframe>
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #111;">
+                <img src="images/blacklodge.jpg" alt="Blacklodge"
+                    style="max-width: 100%; max-height: 100%; object-fit: cover;">
+            </div>
         </div>
         <button class="modal-close" onclick="closeModal('blacklodge-modal')">×</button>
     </div>
 
     <div class="modal" id="tujii-modal">
         <div class="modal-content">
-            <div
-                style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #24C6DC, #514A9D);">
-                <img src="/api/placeholder/1200/800" alt="Tujii Prince"
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #111;">
+                <img src="images/tujii-prince.jpg" alt="Tujii Prince"
                     style="max-width: 90%; max-height: 90%; object-fit: contain;">
             </div>
         </div>
@@ -957,18 +957,18 @@
 
     <div class="modal" id="kolam-modal">
         <div class="modal-content">
-            <iframe src="https://www.instagram.com/kolam.culture/embed" width="100%" height="100%"
-                title="Kolam Culture Instagram Full View">
-            </iframe>
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #7a1010;">
+                <img src="images/kolam-culture.jpg" alt="Kolam Culture"
+                    style="max-width: 70%; max-height: 70%; object-fit: contain;">
+            </div>
         </div>
         <button class="modal-close" onclick="closeModal('kolam-modal')">×</button>
     </div>
 
     <div class="modal" id="ovp-modal">
         <div class="modal-content">
-            <div
-                style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #8E2DE2, #4A00E0);">
-                <img src="/api/placeholder/1200/800" alt="OVP"
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #0a0010;">
+                <img src="images/ovp.png" alt="OVP"
                     style="max-width: 90%; max-height: 90%; object-fit: contain;">
             </div>
         </div>
@@ -977,10 +977,9 @@
 
     <div class="modal" id="chronize-modal">
         <div class="modal-content">
-            <div
-                style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #00F5A0, #00D9F5);">
-                <img src="/api/placeholder/1200/800" alt="Chronize"
-                    style="max-width: 90%; max-height: 90%; object-fit: contain;">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #0a1a1a;">
+                <img src="images/chronize.svg" alt="Chronize"
+                    style="max-width: 70%; max-height: 70%; object-fit: contain;">
             </div>
         </div>
         <button class="modal-close" onclick="closeModal('chronize-modal')">×</button>
@@ -988,10 +987,9 @@
 
     <div class="modal" id="i2bit-modal">
         <div class="modal-content">
-            <div
-                style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #F953C6, #B91D73);">
-                <img src="/api/placeholder/1200/800" alt="i2bit"
-                    style="max-width: 90%; max-height: 90%; object-fit: contain;">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #111;">
+                <img src="images/i2bit.jpg" alt="i2bit"
+                    style="max-width: 100%; max-height: 100%; object-fit: cover;">
             </div>
         </div>
         <button class="modal-close" onclick="closeModal('i2bit-modal')">×</button>
